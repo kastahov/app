@@ -129,14 +129,14 @@ You can run Buggregator via docker from [Docker Hub](https://hub.docker.com/repo
 
 Just run on bash command 
 ```bash
-docker run --pull always -p 23517:8000 -p 1025:1025 -p 9912:9912 -p 9913:9913 butschster/buggregator:latest
+docker run --name buggregator --pull always -p 23517:8000 -p 1025:1025 -p 9912:9912 -p 9913:9913 butschster/buggregator:latest
 # --pull always - optional option checks latest version on every running. You can omit it
 
 # or specific version
-docker run -p 23517:8000 -p 1025:1025 -p 9912:9912 -p 9913:9913 butschster/buggregator:v1.18
+docker run --name buggregator -p 23517:8000 -p 1025:1025 -p 9912:9912 -p 9913:9913 butschster/buggregator:v1.18
 
 # You can omit unused ports if you use, for example, only var-dumper
-docker run --pull always -p 9912:9912 butschster/buggregator:latest
+docker run --name buggregator --pull always -p 9912:9912 butschster/buggregator:latest
 ```
 
 > You can omit unused ports
